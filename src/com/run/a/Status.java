@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
@@ -89,7 +90,14 @@ public class Status {
         String result = null;
         Document document = null;
         try {
-            result =  getHtmlContext(url+"/manager/status?XML=true", "znjt", "1");
+        	
+        	Properties prop = new Properties();
+    		InputStream in = this.getClass().getClassLoader().getResourceAsStream("tomcatAccount.properties");
+    		prop.load(in);
+    		String user=String.valueOf(prop.get("user"));
+    		String password=String.valueOf(prop.get("password"));
+            result =  getHtmlContext(url+"/manager/status?XML=true", user, password);
+            System.out.println(result);
             document = DocumentHelper.parseText(result);
             //System.out.println(result);
         } catch (Exception e) {
