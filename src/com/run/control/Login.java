@@ -73,7 +73,7 @@ public class Login extends HttpServlet {
 			value=new String(value.getBytes("iso-8859-1"),"UTF-8");
 			
 			roadPanel.append("<tr>");
-			roadPanel.append("<td>Tomcat_"+i+"</td>");
+			roadPanel.append("<td>Tomcat</td>");
 			roadPanel.append("<td>"+value+"-"+value2+"</td>");
 			roadPanel.append("<td style=\"text-align: right;\">");
 			roadPanel.append("<button class=\"btn btn-info\"  onclick=tomcat(\""+key+"\",1)>开启</button>");
@@ -101,7 +101,7 @@ public class Login extends HttpServlet {
 			String value=prop.getProperty(key);
 
 			roadPanel.append("<tr>");
-			roadPanel.append("<td>Server_"+i+"</td>");
+			roadPanel.append("<td>Server</td>");
 			roadPanel.append("<td>"+value+"</td>");
 			roadPanel.append("<td style=\"text-align: right;\">");
 			roadPanel.append("<button class=\"btn btn-info\" onclick=server(\""+key+"\",1)>开启</button>");
