@@ -1,0 +1,7 @@
+1.server配置文件，为服务管理 中 服务的名字。
+2.tomcat配置根目录路径
+3.配置tomcat统一账号密码，用来取当前运行状态。
+4.tomcat名称随便填，但编号要对上
+5.配置tomcat startup.bat set "EXECUTABLE=E:\apache-tomcat-7.0.402\bin\catalina.bat"
+     配置tomcat catalina.bat set "CATALINA_BASE=E:\3servertest\apache-tomcat-7.0.40"
+6.确认当前系统net命令可用      
