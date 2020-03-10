@@ -97,7 +97,7 @@ public class Status {
     		String user=String.valueOf(prop.get("user"));
     		String password=String.valueOf(prop.get("password"));
             result =  getHtmlContext(url+"/manager/status?XML=true", user, password);
-            System.out.println(result);
+            //System.out.println(result);
             document = DocumentHelper.parseText(result);
             //System.out.println(result);
         } catch (Exception e) {

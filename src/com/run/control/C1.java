@@ -64,8 +64,8 @@ public class C1 extends HttpServlet {
 				if("1".equals(action)){//开启
 					String url=value+"\\bin\\startup.bat";
 					open(url);	
-					//CallCmd ca = new CallCmd();
-					//ca.begin();
+//					CallCmd ca = new CallCmd();
+//					ca.begin();
 					System.out.println(url);
 				}
 //				if("0".equals(action)){//关闭

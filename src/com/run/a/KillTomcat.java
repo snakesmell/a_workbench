@@ -12,6 +12,8 @@ public class KillTomcat {
 		 try {
 			String back=execCMD("cmd /c netstat -ano | findstr \""+port+"\"");
 			execCMD("cmd /c taskkill /f /pid "+back);
+			//System.out.println(back);
+			//System.out.println("cmd /c taskkill /f /pid "+back);
 			return true;
 		} catch (Exception e) {
 			return false;
