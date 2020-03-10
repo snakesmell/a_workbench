@@ -67,7 +67,7 @@ public class Stop  implements Runnable{
         String batName2 = "E:\\2.Server\\apache-tomcat-7.0.79-windows-x64\\apache-tomcat-7.0.79\\bin\\shutdown.bat";
 //	        runbat(batName);
 //        new Thread(new Start(batName)).start();
-        new Thread(new Start(batName2)).start();
+//        new Thread(new Start(batName2)).start();
         /*callCmd(batName);
         callCmd(batName2);*/
         System.out.println("main thread");

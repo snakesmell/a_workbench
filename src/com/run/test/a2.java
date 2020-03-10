@@ -16,7 +16,7 @@ public class a2 {
 			}
 		}
 		public static void main(String[] args) throws Exception {
-			String command = "E:\\1.Server\\Release_4_apache-tomcat-7.0.79-windows-x64\\apache-tomcat-7.0.79\\bin\\startup.bat";//关闭tomcat命令
+			String command = "t1=E:\\3servertest\\apache-tomcat-7.0.40_2\\bin\\startup.bat";//关闭tomcat命令
 			callCommand(command);	
 		}
 		

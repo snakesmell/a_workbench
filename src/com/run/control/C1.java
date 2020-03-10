@@ -1,9 +1,7 @@
 package com.run.control;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
@@ -16,8 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.run.a.KillTomcat;
 import com.run.a.Start;
-import com.run.a.Status;
-import com.run.a.Stop;
+import com.run.util.CallCmd;
 import com.run.util.CommandUtils;
 
 /**
@@ -67,6 +64,8 @@ public class C1 extends HttpServlet {
 				if("1".equals(action)){//开启
 					String url=value+"\\bin\\startup.bat";
 					open(url);	
+					//CallCmd ca = new CallCmd();
+					//ca.begin();
 					System.out.println(url);
 				}
 //				if("0".equals(action)){//关闭
@@ -112,15 +111,16 @@ public class C1 extends HttpServlet {
 	public void open(String url){
 //		   String batName2 = "E:\\2.Server\\apache-tomcat-7.0.79-windows-x64\\apache-tomcat-7.0.79\\bin\\startup.bat";
 //	        runbat(batName);
-//	        Thread thread = new Thread(new Start(url));
-//	        thread.setDaemon(true);
-//	        thread.start();
-	        try {
-				CommandUtils.exeCommand(url);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+	        Thread thread = new Thread(new Start(url));
+	        thread.setDaemon(true);
+	        thread.start();
+//	        try {
+//				CommandUtils.exeCommand(url);
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 	        
 	}
 	/**

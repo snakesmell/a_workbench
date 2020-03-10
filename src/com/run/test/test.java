@@ -12,9 +12,9 @@ public class test {
 		 String url="E:\\1.Server\\Release_1_apache-tomcat-7.0.40-windows-x64\\apache-tomcat-7.0.40\\bin\\startup.bat";
 		 String url2="E:\\2.Server\\apache-tomcat-7.0.79-windows-x64\\apache-tomcat-7.0.79\\bin\\startup.bat";
 		 String cmd = "cmd /c start "+url;
-		 Thread thread = new Thread(new Start(cmd));
-        thread.setDaemon(true);
-        thread.start();
+//		 Thread thread = new Thread(new Start(cmd));
+//        thread.setDaemon(true);
+//        thread.start();
         
 //        try {
 //			Runtime.getRuntime().exec("cmd /c start "+url);

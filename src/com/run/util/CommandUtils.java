@@ -71,7 +71,7 @@ public class CommandUtils {
 
     public static void main(String[] args) {
         try {
-            String result = exeCommand("E:\\3servertest\\apache-tomcat-7.0.79\\bin\\startup.bat");
+            String result = exeCommand("cmd /c E:\\3servertest\\apache-tomcat-7.0.40\\bin\\startup.bat");
             System.out.println(result);
         } catch (IOException e) {
             e.printStackTrace();
