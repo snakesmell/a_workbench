@@ -19,7 +19,12 @@ import org.apache.commons.exec.PumpStreamHandler;
 public class CommandUtils {
 
     private static final String DEFAULT_CHARSET = "GBK";
-
+    public static String TotalMemorySize="totalMemorySize";
+    public static String UsedMemory="usedMemory";
+    public static String OsName="osName";
+    public static String SystemList="SystemList";
+    public static String Left="0";
+    
     /**
      * 执行指定命令
      * 

@@ -14,14 +14,16 @@
 <script src="<%=basePath%>statics/dist/layui.js"></script>
 <style>
 	.a3 {
+		border-radius: 5px;
 	    height: 200px;
-	    background-color: red; /* 不支持线性的时候显示 */
-	    background-image: linear-gradient(to left, #1E90FF , #F0F8FF);
+	    background-color: #00BFFF; /* 不支持线性的时候显示 */
+	    /* background-image: linear-gradient(to left, #1E90FF , #F0F8FF); */
 	}
 	.a1 {
+		border-radius: 5px;
 	    height: 200px;
-	    background-color: red; /* 不支持线性的时候显示 */
-	    background-image: linear-gradient(to left , #F0F8FF, #1E90FF);
+	    background-color: #00BFFF; /* 不支持线性的时候显示 */
+	    /* background-image: linear-gradient(to left , #F0F8FF, #1E90FF); */
 	}
 </style>
 </head>
@@ -30,9 +32,10 @@
 <div style="text-align: center;font-size: 30px;">服务控制台</div>
 <br>
 <div class="row" >
-  <div class="col-md-2 a1" ></div>
+  <div class="col-md-2 a1" style="font-size: 14px;color: white;">
+  </div>
   <div class="col-md-8" >
-  	<table class="table table-condensed" style="background-color: #E1FFFF;">
+  	<table class="table table-condensed" style="background-color:	#00FFFB;border-radius: 10px;">
   		<thead>
   			<tr style="font-size: 20px;">
   				<td>类别</td>
@@ -44,7 +47,7 @@
   		<tbody id="roadPanel" ></tbody>
 	</table>
   </div>
-  <div class="col-md-2 a3"></div>
+  <div class="col-md-2 a3" style="font-size: 14px;color: white;text-align: center;"></div>
 </div>
 </body>
 <script type="text/javascript">
@@ -97,7 +100,18 @@ function server(id,action){
 	 }else{}
 	 
 }
-
+//获取服务运行状态
+setInterval(function(){
+	 $.ajax({
+	       url:"<%=basePath%>/S3",
+	       type:"POST",
+	       data:{ id: 0 },
+	       success:function(data){
+				//console.log("SERVER:"+data);
+	    	   $(".a1").html(data);
+	       }
+	 });
+}, 5000);
 //获取服务运行状态
 setInterval(function(){
 	 $.ajax({
@@ -120,7 +134,7 @@ setInterval(function(){
 				}
 	       }
 	 });
-}, 3000);
+}, 5000);
 //获取服务运行状态
 setInterval(function(){
 	 $.ajax({
@@ -142,6 +156,6 @@ setInterval(function(){
 				}
 	       }
 	 });
-}, 3000);
+}, 5000);
 </script>
 </html>
