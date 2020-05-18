@@ -43,15 +43,15 @@ public class Login extends HttpServlet {
 //		String p1=request.getParameter("p1");//x轴像素比例
 //		String p2=request.getParameter("p2");//y轴像素比例
 		String html="";
-		try {
-			html+=this.getTomcat();
-			html+=this.getServer();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		request.setAttribute("roadPanel", "'"+html+"'");
+//		try {
+//			html+=this.getTomcat();
+//			html+=this.getServer();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		request.setAttribute("roadPanel", "'"+html+"'");
 		request.getRequestDispatcher("/a/a.jsp").forward(request,response);
-		doGet(request, response);
+//		doGet(request, response);
 	}
 	
 	public String getTomcat() throws Exception{
