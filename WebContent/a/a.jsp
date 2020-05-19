@@ -53,9 +53,10 @@
   <div class="col-md-2 a3" style="font-size: 14px;color: white;text-align: center;">
   	<ul>
   		<li><label style="cursor: pointer;" onclick="openWindow()">设备添加</label></li>
-  		<li><label style="cursor: pointer;" onclick="openDoc()">视窗平台</label></li>
   	</ul>
+  	<ul	id="sc">
   	
+  	</ul>
   	
   </div>
 </div>
@@ -73,10 +74,9 @@ function openWindow(){
 	var ph=path.replace('WorkBench','Top7');
 	window.open(ph+"page/qd.jsp","_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=800, height=800");
 }
-function openDoc(){
-	var path="<%=basePath%>";
-	var ph=path.replace('WorkBench','DocManage');
-	window.open(ph+"Login","_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=800, height=800");
+function openDoc(fwip){
+	var path="http://"+fwip+"/DocManage/Show/c.jsp";
+	window.open(path,"_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1600, height=800");
 
 }
 //下发命令
@@ -108,10 +108,22 @@ setInterval(function(){
 	 $.ajax({
 	       url:"<%=basePath%>/demoRequest",
 	       type:"GET",
-	       //data:{ id: 0 },
+	       data:{ position: 'left' },
 	       success:function(data){
 				//console.log("SERVER:"+data);
 	    	   $("#leftPanel").html(data);
+	       }
+	 });
+}, 5000);
+//获取服务运行状态 RIGHT
+setInterval(function(){
+	 $.ajax({
+	       url:"<%=basePath%>/demoRequest",
+	       type:"GET",
+	       data:{ position: 'right' },
+	       success:function(data){
+				//console.log("SERVER:"+data);
+	    	   $("#sc").html(data);
 	       }
 	 });
 }, 5000);

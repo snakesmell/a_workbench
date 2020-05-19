@@ -1,9 +1,11 @@
 package com.httpRequest;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -12,17 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
-
 import com.sqliteUtil.Common;
-import com.sqliteUtil.SQLiteJDBC;
 
 /**
  * Servlet implementation class demoRequest
@@ -44,10 +36,30 @@ public class demoRequest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String position=request.getParameter("position");
 		//////////////////////////////LEFT PANEL//////////////////////////////////////////	
-		String html=(String)request.getServletContext().getAttribute(Common.ContextWindow);
-		response.setCharacterEncoding("utf-8");
-		response.getWriter().append(html);
+		if(Common.LEFT.equals(position)){
+			String html=(String)request.getServletContext().getAttribute(Common.ContextWindow);
+			response.setCharacterEncoding("utf-8");
+			response.getWriter().append(html);	
+		}
+		//////////////////////////////RightPANEL//////////////////////////////////////////	
+		if(Common.RIGHT.equals(position)){
+			List<Map> list=(List<Map>)request.getServletContext().getAttribute(Common.Context);
+			StringBuffer sb=new StringBuffer();
+			Set<String> set = new HashSet<String>();
+			if(list==null)return;
+			for (Map map : list) {
+				String fwip=String.valueOf(map.get(Common.FWIP));
+				set.add(fwip);
+			}
+			for (String string : set) {
+				sb.append("<li><label style=\"cursor: pointer;\" onclick=\"openDoc('"+string+"')\">视窗平台</label></li>");
+			}
+			response.setCharacterEncoding("utf-8");
+			response.getWriter().append(sb.toString());			
+		}
+		
 	}
 
 	/**

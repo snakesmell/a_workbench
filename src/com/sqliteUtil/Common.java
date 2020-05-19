@@ -4,6 +4,10 @@ public class Common {
 public static String Context="Context";
 public static String ContextWindow="ContextWindow";
 
+public static String LEFT="left";
+public static String RIGHT="right";
+public static String CP="cp";//磁盘
+
 public static String SUCCESS="SUCCESS";
 public static String ERROR="ERROR";
 public static String TYPE="type";//操作类型
