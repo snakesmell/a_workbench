@@ -53,10 +53,7 @@ public class computerStatus extends HttpServlet {
 		String TotalMemorySize=(String)map.get(CommandUtils.TotalMemorySize);
 		String UsedMemory=(String)map.get(CommandUtils.UsedMemory);
 		sb.append("<div>操作系统&nbsp;"+OsName+"</div>");
-		sb.append("<div>内存大小&nbsp;"+TotalMemorySize+"</div>");
-		sb.append("<div>已使用&nbsp;"+UsedMemory+"</div>");
-		
-		sb.append("<br><div>磁盘使用</div>");
+		sb.append("<div>内存&nbsp;"+TotalMemorySize+"&nbsp;已用&nbsp;"+UsedMemory+"</div>");
 		ArrayList<String> list=(ArrayList<String>)map.get(CommandUtils.SystemList);
 		for (String str : list) {
 			sb.append("<div>"+str+"</div>");

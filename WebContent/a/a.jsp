@@ -32,7 +32,7 @@
 <div style="text-align: center;font-size: 30px;">服务控制台</div>
 <br>
 <div class="row" >
-  <div class="col-md-2 a1" style="font-size: 14px;color: white;" id="leftPanel">
+  <div class="col-md-2 a1" style="font-size: 14px;color: white;height: 100%;padding-left: 30px;" id="leftPanel">
   </div>
   
   <div class="col-md-8" >
@@ -51,7 +51,12 @@
   </div>
   
   <div class="col-md-2 a3" style="font-size: 14px;color: white;text-align: center;">
-  	<label style="cursor: pointer;" onclick="openWindow()">设备添加</label>
+  	<ul>
+  		<li><label style="cursor: pointer;" onclick="openWindow()">设备添加</label></li>
+  		<li><label style="cursor: pointer;" onclick="openDoc()">视窗平台</label></li>
+  	</ul>
+  	
+  	
   </div>
 </div>
 </body>
@@ -67,6 +72,12 @@ function openWindow(){
 	var path="<%=basePath%>";
 	var ph=path.replace('WorkBench','Top7');
 	window.open(ph+"page/qd.jsp","_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=800, height=800");
+}
+function openDoc(){
+	var path="<%=basePath%>";
+	var ph=path.replace('WorkBench','DocManage');
+	window.open(ph+"Login","_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=800, height=800");
+
 }
 //下发命令
 function request(id,action){
