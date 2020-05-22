@@ -83,7 +83,7 @@ public class demoRequest extends HttpServlet {
 			sb.append("<tr>");
 			
 			sb.append("<td>"+remark+"</td>");
-			sb.append("<td>"+name+"-"+serverip+"</td>");
+			sb.append("<td>"+serverip+"-|-<label style=\"color: 	#C71585\">"+name+"</label></td>");
 			
 			sb.append("<td><label class=\"btn btn-info\" onclick=\"request('"+id+"',0)\">开启</label>");
 			sb.append("<label class=\"btn btn-warning\" onclick=\"request('"+id+"',1)\">关闭</label></td>");

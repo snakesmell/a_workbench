@@ -29,7 +29,8 @@
 </head>
 <body>
 <br><br>
-<div style="text-align: center;font-size: 30px;">服务控制台</div>
+<div style="text-align: center;font-size: 30px;">交通运维服务控制台</div>
+&nbsp;&nbsp;<label style="cursor: pointer;" onclick="readMe()">操作手册</label>
 <br>
 <div class="row" >
   <div class="col-md-2 a1" style="font-size: 14px;color: white;height: 100%;padding-left: 30px;" id="leftPanel">
@@ -57,7 +58,7 @@
   	<ul	id="sc">
   	
   	</ul>
-  	
+  	<label st></label>
   </div>
 </div>
 </body>
@@ -79,6 +80,11 @@ function openDoc(fwip){
 	window.open(path,"_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1600, height=800");
 
 }
+function readMe(){
+	var path="<%=basePath%>";
+	window.open(path+"a/readme.jsp","_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1600, height=800");
+}
+
 //下发命令
 function request(id,action){
 	var title=""; 
