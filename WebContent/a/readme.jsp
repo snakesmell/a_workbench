@@ -32,6 +32,21 @@
 <img alt="" src="<%=basePath%>a/img/111.png">
 <br><br>
 <label>三、配置完成后系统会自动刷新服务页面</label><br>
+<br>
+四、视窗平台功能介绍
+<br><br>
+1.支持图片在线预览<br><br>
+2.支持word在线预览<br><br>
+3.CLASS文件在线反编译查阅<br><br>
+4.PDF文件在线查看<br><br>
+5.XML文件在线查看<br><br>
+6.文本类文件查看.如：txt,config,properties...等等<br><br>
+7.支持文件上传下载<br><br>
+8.可以在线创建文件夹<br><br>
+9.可以切换任意磁盘目录<br><br>
+10.文件在线删除（慎用！）<br>
+<br>
+<br>
 Thank You!
 </body>
 </html>
