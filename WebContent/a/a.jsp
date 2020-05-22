@@ -84,7 +84,9 @@ function readMe(){
 	var path="<%=basePath%>";
 	window.open(path+"a/readme.jsp","_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1600, height=800");
 }
-
+function openTomcat(serverip,name){
+	window.open("http://"+serverip+"/"+name,"_blank","toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1600, height=800");
+}
 //下发命令
 function request(id,action){
 	var title=""; 
