@@ -54,7 +54,7 @@ public class demoRequest extends HttpServlet {
 				set.add(fwip);
 			}
 			for (String string : set) {
-				sb.append("<li><label style=\"cursor: pointer;\" onclick=\"openDoc('"+string+"')\">视窗平台</label></li>");
+				sb.append("<li><label style=\"cursor: pointer;\" onclick=\"openDoc('"+string+"')\">"+string+"-视窗平台</label></li>");
 			}
 			response.setCharacterEncoding("utf-8");
 			response.getWriter().append(sb.toString());			

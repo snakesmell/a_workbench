@@ -117,7 +117,7 @@ public class DemonServer implements Runnable{
 //					Thread.sleep(100);
 					String value=String.valueOf(map.get(Common.FWIP));
 					String result = httpRequest(value,Common.computerStatus,null);
-					sb.append(value+"</br>");
+					sb.append("<label style=\"color:#2F4F4F\">"+value+"</label></br>");
 					sb.append(result+"</br>");
 //					Thread.sleep(100);
 //					SQLiteJDBC.insertStatus(result);//Step3 保存

@@ -81,15 +81,24 @@ function openDoc(fwip){
 }
 //下发命令
 function request(id,action){
-	 $.ajax({
-	       url:"<%=basePath%>/httpRequestAction",
-	       type:"POST",
-	       data:{ id: id,action:action },
-	       success:function(data){
-				//console.log("SERVER:"+data);
-	    	   //$("#roadPanel").html(data);
-	       }
-	 });
+	var title=""; 
+	 if(action==1){
+		 title="关闭";
+	 }
+	 if(action==0){
+		 title="开启";
+	 }
+	 if(confirm("确定要"+title+"吗？")){
+		 $.ajax({
+		       url:"<%=basePath%>/httpRequestAction",
+		       type:"POST",
+		       data:{ id: id,action:action },
+		       success:function(data){
+					//console.log("SERVER:"+data);
+		    	   //$("#roadPanel").html(data);
+		       }
+		 });
+	 }else{}
 }
 //获取服务运行状态 MAIN
 setInterval(function(){
